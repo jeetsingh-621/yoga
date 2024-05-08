@@ -18,7 +18,7 @@ function Navbar() {
       };
     }, [showNavBar]);
   return (
-    <div className='w-full md:py-6 py-3 px-2 md:px-4'>
+    <div className='w-full max-w-[1200px] mx-auto  md:py-6 py-3 px-2 md:px-4'>
     <div className='w-full  flex items-center justify-between '>
     <div onClick={toggleNavBar} className=" w-full max-w-11 p-2  z-[2000] ">
         <div
