@@ -7,18 +7,18 @@ function Navbar() {
   const toggleNavBar = () => {
     setShowNavBar((prevState) => !prevState);
   };
-  useEffect(() => {
-    if (showNavBar) {
-      document.body.classList.add("overflow-hidden");
-    } else {
-      document.body.classList.remove("overflow-hidden");
-    }
-    return () => {
-      document.body.classList.remove("overflow-hidden");
-    };
-  }, [showNavBar]);
+  // useEffect(() => {
+  //   if (showNavBar) {
+  //     document.body.classList.add("overflow-hidden");
+  //   } else {
+  //     document.body.classList.remove("overflow-hidden");
+  //   }
+  //   return () => {
+  //     document.body.classList.remove("overflow-hidden");
+  //   };
+  // }, [showNavBar]);
   return (
-    <div className='w-full md:py-6 py-3 px-2 md:px-4'>
+    <div className='w-full md:py-6 py-3'>
       <div className='w-full flex items-center justify-between '>
         <div onClick={toggleNavBar} className=" w-full max-w-11 p-2  z-[2000] ">
           <div
