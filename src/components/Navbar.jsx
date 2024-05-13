@@ -7,20 +7,21 @@ function Navbar() {
   const toggleNavBar = () => {
     setShowNavBar((prevState) => !prevState);
   };
-  useEffect(() => {
-    if (showNavBar) {
-      document.body.classList.add("overflow-hidden");
-    } else {
-      document.body.classList.remove("overflow-hidden");
-    }
-    return () => {
-      document.body.classList.remove("overflow-hidden");
-    };
-  }, [showNavBar]);
+  // useEffect(() => {
+  //   if (showNavBar) {
+  //     document.body.classList.add("overflow-hidden");
+  //   } else {
+  //     document.body.classList.remove("overflow-hidden");
+  //   }
+  //   return () => {
+  //     document.body.classList.remove("overflow-hidden");
+  //   };
+  // }, [showNavBar]);
   return (
-    <div className='w-full md:py-6 py-3 px-2 md:px-4'>
+    <div className='max-w-[1400px] relative'>
+    <div className='w-full max-w-[1400px] mx-auto fixed  top-0 left- z-[999] bg-lightwhite md:py-6 py-3 px-0 md:px-4 border-b-[0.2px] border-light-orange'>
       <div className='w-full flex items-center justify-between '>
-        <div onClick={toggleNavBar} className=" w-full max-w-11 p-2  z-[2000] ">
+        <div onClick={toggleNavBar} className=" w-full  max-w-11 p-2  z-[2000] ">
           <div
             className={`flex  flex-col w-full cursor-pointer z-[300] ${showNavBar
               ? "gap-0   justify-between   h-6 w-6 ms-0"
@@ -41,10 +42,10 @@ function Navbar() {
             ></span>
           </div>
         </div>
-        <div className='w-fit  px-2'>
+        <div className='w-fit ml-16  px-2'>
           <img className='w-24' src={logo} alt="" />
         </div>
-        <div className='hidden md:block'>
+        <div className='hidden md:block hover:bg-light-orange duration-300 cursor-pointer px-5 py-2 rounded-xl'>
           <div className=' w-fit flex items-center gap-2 font-["Excon"]'>
             <SlHandbag />
             <h3 className='font-[600] text-xl'>Cart</h3>
@@ -57,12 +58,12 @@ function Navbar() {
         <div
           className={`flex w-full overflow-hidden flex-col items-center justify-center gap-4 sm:gap-6 font-semibold transition-all duration-500 bg-ebony
            ${showNavBar
-            ? "w-full max-h-[400px] z-[100] py-10"
+            ? "w-full max-h-[400px]  z-[100] py-10"
             : "max-h-0"
             }`}
         >
-          <ul className="navul px-8 w-full sm:flex flex flex-col gap-8 items-center justify-center font-semibold text-3xl lg:gap-10 md:gap-4  sm:text-sm  sm:font-semibold">
-            {["Why FinanceX", "Features", "Update", "Blog"].map((item, index) => (
+          <ul className="navul px-8 w-full sm:flex flex flex-col gap-8 items-center justify-center font-semibold text-lg lg:gap-10 md:gap-4  sm:text-xl  sm:font-semibold">
+            {["Why Namaste", "Features", "Update", "Blog"].map((item, index) => (
               <li className="relative  hover:text-[#CA9277] hover:scale-110 duration-300 hover:underline hover:underline-offset-8" key={index}>
                 {item}
               </li>
@@ -76,6 +77,7 @@ function Navbar() {
         </div>
 
       </div>
+    </div>
     </div>
   )
 }
