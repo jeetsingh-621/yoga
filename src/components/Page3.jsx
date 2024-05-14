@@ -15,7 +15,7 @@ function Page3() {
   useGSAP(()=>{
     gsap.from(".item1 h1, .item1 p, .item1 .btn ",{
       x:100,
-      duration:0.6,
+      duration:1,
       opacity:0,
       stagger:0.3,
       scrollTrigger:{
@@ -29,9 +29,9 @@ function Page3() {
     })
     gsap.from(".item2 h1, .item2 p, .item2 .btn ",{
       x:-100,
-      duration:0.6,
+      duration:1,
       opacity:0,
-      stagger:0.2,
+      stagger:0.3,
       scrollTrigger:{
         trigger:".item2",
       // markers:true,

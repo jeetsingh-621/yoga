@@ -18,10 +18,11 @@ function Explore() {
             scrollTrigger:{
                 trigger:".explore",
                 scroller:"body",
-                start:"top 70%",
+                start:"top 60%",
                 end:"bottom 80%",
-                toggleActions:"play none none reverse",
+                // toggleActions:"play none none reverse",
                 // scrub:true,
+                // markers:true,
                 // pin:true,
             }
         })
