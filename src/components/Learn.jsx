@@ -7,8 +7,44 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 function Learn() {
+  
+gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(useGSAP);
+
+useGSAP(()=>{
+  gsap.from(".learn h1,.learn p",{
+    x:-100,
+    duration:1,
+    opacity:0,
+    stagger:0.3,
+    scrollTrigger:{
+      trigger:".learn h1",
+      scroller:"body",
+      // markers:true,
+      start:"top 90%",
+      
+
+    }
+  })
+  gsap.from(".sliderr",{
+    opacity:0,
+    
+    duration:2,
+    scrollTrigger:{
+      trigger:".sliderr",
+      scroller:"body",
+      // markers:true,
+      start:"top 80%",
+    }
+
+  })
+})
+  
   let sliderRef = useRef(null);
   const next = () => {
     sliderRef.slickNext();
@@ -70,13 +106,13 @@ function Learn() {
   ]
   return (
     <div className='w-full   py-0 md:px-0 text-white'>
-    <div className='w-full py-10 xl:pl-28 pl-0  bg-light-black'>
-        <h1 className='lg:text-[54px]  text-center md:text-left xl:text-[64px] md:text-[44px] text-[34px] font-[500] leading-none  font-["Ranade"]'>Learn with us</h1>
+    <div className=' learn w-full py-10 xl:pl-28 pl-0  bg-light-black'>
+        <h1 className='lg:text-[54px] md:px-2  text-center md:text-left xl:text-[64px] md:text-[44px] text-[34px] font-[500] leading-none  font-["Ranade"]'>Learn with us</h1>
         <p className=' w-full text-sm md:text-md text-center md:text-left md:w-[55%] leading-tight px-2 my-5'>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system.</p>
     </div>
 
     <div className='w-full h-full py-10 bg-light-black'>
-      <div className="mx-0 w-full ">
+      <div className= "sliderr mx-0 w-full ">
         <Slider {...settings}  ref={slider => {
           sliderRef = slider;
         }}

@@ -1,8 +1,24 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import logo from '../../public/images/logo.png'
 import { SlHandbag } from "react-icons/sl";
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 function Navbar() {
+  //  var tl = gsap.timeline();
+
+ useGSAP(()=>{
+  gsap.from(".navbar .menuicon , .logo, .cart",{
+    y:-30,
+    opacity:0,
+    duration:0.5,
+    delay:0.2,
+    ease:'power2.out',
+    stagger:0.3
+  })
+
+ })
+    
   const [showNavBar, setShowNavBar] = useState(false);
   const toggleNavBar = () => {
     setShowNavBar((prevState) => !prevState);
@@ -19,9 +35,9 @@ function Navbar() {
   // }, [showNavBar]);
   return (
     <div className='max-w-[1400px] relative'>
-    <div className='w-full max-w-[1400px] mx-auto fixed  top-0 left- z-[999] bg-lightwhite md:py-6 py-3 px-0 md:px-4 border-b-[0.2px] border-light-orange'>
+    <div className='navbar w-full max-w-[1400px] mx-auto fixed  top-0 left- z-[999] bg-lightwhite md:py-6 py-3 px-0 md:px-4 border-b-[0.2px] border-light-orange'>
       <div className='w-full flex items-center justify-between '>
-        <div onClick={toggleNavBar} className=" w-full  max-w-11 p-2  z-[2000] ">
+        <div  onClick={toggleNavBar} className="menuicon w-full  max-w-11 p-2  z-[2000] ">
           <div
             className={`flex  flex-col w-full cursor-pointer z-[300] ${showNavBar
               ? "gap-0   justify-between   h-6 w-6 ms-0"
@@ -42,11 +58,11 @@ function Navbar() {
             ></span>
           </div>
         </div>
-        <div className='w-fit ml-16  px-2'>
+        <div  className='logo w-fit ml-16  px-2'>
           <img className='w-24' src={logo} alt="" />
         </div>
-        <div className='hidden md:block hover:bg-light-orange duration-300 cursor-pointer px-5 py-2 rounded-xl'>
-          <div className=' w-fit flex items-center gap-2 font-["Excon"]'>
+        <div className=' hidden md:block hover:bg-light-orange duration-300 cursor-pointer px-5 py-2 rounded-xl'>
+          <div className=' cart w-fit flex items-center gap-2 font-["Excon"]'>
             <SlHandbag />
             <h3 className='font-[600] text-xl'>Cart</h3>
 
