@@ -36,7 +36,7 @@ function Page3() {
         trigger:".item2",
       // markers:true,
 
-        start:"top 50%",
+        start:"top 70%",
         end:"bottom 50%",
         // toggleActions:"play none none reverse"
       }

@@ -7,8 +7,13 @@ import Discover from './components/Discover'
 import Explore from './components/Explore'
 import Review from './components/Review'
 import Footer from './components/Footer'
+import LocomotiveScroll from 'locomotive-scroll';
+
+
 
 function App() {
+const locomotiveScroll = new LocomotiveScroll();
+
   
   return (
     <div className='w-full bg-black'>
