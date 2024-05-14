@@ -119,7 +119,7 @@ useGSAP(()=>{
          className='h-full'>
         {slidedata.map((item,index)=>{
           return( 
-            <div className='px-2 lg:px-3  h-full'>
+            <div key={index} className='px-2 lg:px-3  h-full'>
             
                <div key={index} className="slide mx-0  max-w-[380px] h-full flex-shrink-0 w-full">
           <img className='w-full h-full object-contain' src={item.img} />

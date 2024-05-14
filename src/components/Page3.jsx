@@ -13,7 +13,7 @@ function Page3() {
   gsap.registerPlugin(useGSAP);
 
   useGSAP(()=>{
-    gsap.from(".item1 h1, .item1 p, .item1 .btn ",{
+    gsap.from(".item1 h1, .item1 p, .item1 .btn1 ",{
       x:100,
       duration:1,
       opacity:0,
@@ -27,7 +27,7 @@ function Page3() {
         // toggleActions:"play none none reverse"
       }
     })
-    gsap.from(".item2 h1, .item2 p, .item2 .btn ",{
+    gsap.from(".item2 h1, .item2 p, .btnn ",{
       x:-100,
       duration:1,
       opacity:0,
@@ -36,7 +36,7 @@ function Page3() {
         trigger:".item2",
       // markers:true,
 
-        start:"top 40%",
+        start:"top 50%",
         end:"bottom 50%",
         // toggleActions:"play none none reverse"
       }
@@ -70,7 +70,7 @@ function Page3() {
            <h1 className='xl:text-[64px] md:text-[64px] xl:text-left md:text-center text-[42px] font-[500]  tracking-wide leading-none  xl:leading-[64px] md:leading-[64px]  font-[Ranade]'>Healthy lifestyle with yoga.</h1>
            <p className='xl:text-[20px]  md:text-center xl:text-left text-[18px] xl:w-[90%] w-full leading-none my-8 xl:my-10 tracking-tight font-[Excon]'>We are a Yoga Studio based in Sidney, Australia. Our goal is to promote a healthy lifestyle through practice of yoga and mindfulness. Classes are held in our studio space and online. Everyone is welcome to join our little community.</p>
 
-           <div className=' btn w-full text-center xl:text-left'>
+           <div className=' btn1 w-full text-center xl:text-left'>
             <button className='bg-light-black hover:bg-light-orange duration-300 hover:text-black  px-8 text-sm font-[Ranade] text-white  rounded-lg py-3'>ABOUT US </button>
            </div>
         </div>
@@ -79,7 +79,7 @@ function Page3() {
         <div className='item2 px-2 xl:px-24 xl:py-28 py-10 xl:w-[55%] w-full relative'>
           <h1 className='xl:text-[64px] md:text-[64px] md:text-center xl:text-left text-[42px] tracking-wide  font-[500]  leading-none  xl:leading-[64px] md:leading-[60px]  font-[Ranade] '>Start with us the body and mind clensing</h1>
           <p className='xl:text-[20px]  md:text-center xl:text-left text-[18px]  w-full leading-none my-8 xl:my-10 tracking-tight font-[Excon]'>No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful.</p>
-          <div className='btn w-full text-center xl:text-left'>
+          <div className='btnn w-full text-center xl:text-left'>
             <button className='bg-light-black hover:bg-light-orange duration-300 hover:text-black px-8 text-sm font-[Ranade] text-white  rounded-lg py-3'>START YOUR JOURNEY </button>
            </div>
 
